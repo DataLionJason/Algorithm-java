@@ -27,13 +27,14 @@ public class Sort {
     }
 
     //    冒泡排序
+//    规则：相邻的两个数字进行比较，如果一个数大于另一个数相互交换（如果一个数小于另一个数相互交换）
     public static void bubbleSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
         int N = arr.length;
-        for (int end = N - 1; end >= 0; end--) { // 控制比较的趟数
-            for (int second = 1; second <= end; second++) {
+        for (int end = N - 1; end >= 0; end--) { // 控制比较的趟数，一共需要比较N-1次
+            for (int second = 1; second <= end; second++) { // 该数和前一个数进行比较
 //                大于小于最终只决定数组的排序是从小到大还是从大到小
                 if (arr[second - 1] > arr[second]) {
                     swap(arr, second, second - 1);
